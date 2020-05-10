@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "init-db": "node ./db/init.js"
   },
   "dependencies": {
     "bcrypt": "^4.0.1",

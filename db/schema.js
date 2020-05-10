@@ -1,9 +1,9 @@
-const { promisify } = require('util');
-const Knex = require('knex');
-const connection = require('../knexfile');
-const { Model } = require('objection');
-const bcrypt = require('bcryptjs');
-const crypto = require('crypto');
+const { promisify } = require("util");
+const Knex = require("knex");
+const connection = require("../knexfile");
+const { Model } = require("objection");
+const bcrypt = require("bcryptjs");
+const crypto = require("crypto");
 
 const knexConnection = Knex(connection);
 
@@ -11,16 +11,16 @@ Model.knex(knexConnection);
 
 class User extends Model {
   static get tableName() {
-    return 'users';
+    return "users";
   }
 
   static get idColumn() {
-    return 'id';
+    return "id";
   }
 
   getUser() {
     return {
-      id: this.id
+      id: this.id,
     };
   }
 
@@ -35,11 +35,11 @@ class User extends Model {
 
   static get jsonSchema() {
     return {
-      type: 'object',
-      required: ['id'],
+      type: "object",
+      required: ["id"],
       properties: {
-        id: { type: 'string', minLength: 1, maxLength: 255 }
-      }
+        id: { type: "string", minLength: 1, maxLength: 255 },
+      },
     };
   }
 }
